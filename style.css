@@ -158,7 +158,17 @@ a {
   text-decoration: none;
   transition: background-color 180ms ease, color 180ms ease;
 }
+.product-index a.disponible {
+  background-color: #32fa00;
+  color: #000;
+  font-weight: 700;
+}
 
+.product-index a.no-disponible {
+  background-color: #d93025;
+  color: #fff;
+  font-weight: 700;
+}
 .product-index a::before {
   content: counter(product-links) ". ";
   color: var(--muted);
@@ -168,6 +178,22 @@ a {
 .product-index a:focus-visible {
   background: var(--soft);
   color: var(--text);
+}
+
+.product-index a.disponible:hover,
+.product-index a.disponible:focus-visible {
+  background: #27c900;
+  color: #000;
+}
+
+.product-index a.no-disponible:hover,
+.product-index a.no-disponible:focus-visible {
+  background: #b42318;
+  color: #fff;
+}
+
+.product-index a.no-disponible::before {
+  color: inherit;
 }
 
 .product-list {
@@ -235,6 +261,7 @@ a {
   padding-top: 1.5rem;
 }
 
+.product-section h2,
 .product-section h3,
 .info-card h3 {
   margin: 0 0 0.65rem;
@@ -274,6 +301,18 @@ a {
   padding-top: 1.75rem;
 }
 
+.product-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.7rem;
+  padding-top: 1.75rem;
+}
+
+.product-actions .development-notice {
+  margin: 0;
+}
+
 .request-button {
   display: inline-flex;
   min-height: 3rem;
@@ -295,6 +334,27 @@ a {
   background: var(--green-dark);
 }
 
+.secondary-button {
+  display: inline-flex;
+  min-height: 3rem;
+  align-items: center;
+  justify-content: center;
+  padding: 0.65rem 1rem;
+  border: 1px solid #c9c9c5;
+  border-radius: 0.4rem;
+  background: #f4f4f1;
+  color: var(--text);
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 180ms ease, transform 180ms ease;
+}
+
+.secondary-button:hover {
+  transform: translateY(-2px);
+  background: #e8e8e4;
+}
+
 .development-notice {
   display: inline-block;
   margin: 1.75rem 0 0;
@@ -303,6 +363,141 @@ a {
   border: 1px solid var(--border);
   color: #555;
   font-weight: 700;
+}
+
+.detail-page {
+  width: min(100% - 2rem, 1000px);
+  margin: 0 auto;
+  padding-bottom: 4rem;
+}
+
+.detail-heading {
+  padding: clamp(2rem, 6vw, 4rem) 0 1.5rem;
+}
+
+.detail-heading .product-meta {
+  margin-top: 1.25rem;
+}
+
+.section-nav {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.65rem 0;
+  background: var(--page);
+  border-bottom: 1px solid var(--border);
+}
+
+.section-nav a {
+  display: inline-block;
+  padding: 0.4rem 0.75rem;
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: color 180ms ease, background-color 180ms ease;
+}
+
+.section-nav .back-to-product {
+  margin-left: auto;
+  background: var(--soft);
+  color: var(--text);
+  font-weight: 700;
+}
+
+.section-nav a:hover,
+.section-nav a:focus-visible {
+  background: var(--soft);
+  color: var(--text);
+}
+
+.full-information,
+.detail-media {
+  scroll-margin-top: 4.5rem;
+}
+
+.full-information > .product-section:first-of-type {
+  padding-top: 2rem;
+}
+
+.detail-media {
+  margin-top: 2rem;
+  padding: clamp(1.2rem, 4vw, 2rem);
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+
+.detail-media > h2 {
+  margin: 0 0 1rem;
+  font-size: clamp(1.45rem, 5vw, 2rem);
+  line-height: 1.2;
+  letter-spacing: -0.035em;
+}
+
+.detail-media > h3 {
+  margin: 1.75rem 0 0.75rem;
+  font-size: 1.1rem;
+}
+
+.youtube-frame {
+  overflow: hidden;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #e9e9e6;
+  border: 1px solid var(--border);
+}
+
+.youtube-frame iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.media-help {
+  margin: 0.65rem 0 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.gallery-grid {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.gallery-grid--phone {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.gallery-grid--computer {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.gallery-image {
+  min-width: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.gallery-grid--phone .gallery-image {
+  aspect-ratio: 9 / 16;
+}
+
+.gallery-grid--computer .gallery-image {
+  aspect-ratio: 16 / 10;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  clip-path: inset(50%);
 }
 
 .hero {
@@ -375,7 +570,90 @@ a:focus-visible {
   outline: 3px solid #777;
   outline-offset: 3px;
 }
-
+.config-preview{
+ background-size: contain;
+ background-repeat: no-repeat;
+ background-position: center;
+}
+.phone-preview-1{
+  background-image: url(./assets/gestor\ de\ deudas-\ seccion\ principal.jpg);
+}
+.phone-preview-2{
+  background-image: url(./assets/gestor\ de\ deudas-panel\ de\ anotacion.jpg);
+}
+.phone-preview-3{
+  background-image: url(./assets/gestor\ de\ deudas-\ confirmacion\ de\ pago.jpg);
+}
+.phone-preview-4{
+  background-image: url(./assets/gestor\ de\ deudas-seccion\ de\ pagados.jpg);
+}
+.phone-preview-5{
+  background-image: url(./assets/gestro\ de\ deudas-buscador.jpg);
+}
+.phone-preview-6{
+  background-image: url(./assets/control\ de\ deudas\ reloj.jpg);
+}
+/* imagenes de gestor de ventas */
+.product-2-phone-1{
+  background-image: url(./assets/gestor\ de\ ventas-\ seccion\ principal.jpg);
+}
+.product-2-phone-2{
+  background-image: url(./assets/gestor\ de\ ventas-panel\ de\ registro\ de\ venta.jpg);
+}
+.product-2-phone-3{
+  background-image: url(./assets/gestor\ de\ ventas-\ notifiacion\ de\ edicion.jpg);
+}
+.product-2-phone-4{
+background-image: url(./assets/gestor\ de\ ventas-\ detalles\ de\ la\ edicion.jpg);
+}
+.product-2-phone-5{
+  background-image: url(./assets/gestor\ de\ ventas-\ detalles\ completos\ de\ la\ edicion.jpg);
+}
+.product-2-phone-6{
+  background-image: url(./assets/gestor\ de\ ventas-\ registros\ diarios.jpg);
+}
+.product-2-phone-7{
+  background-image: url(./assets/gestor\ de\ ventas-\ registros\ diarios\ abiero.jpg);
+}
+.product-2-phone-8{
+  background-image: url(./assets/gestor\ de\ ventas-\ registros\ mensuales.jpg);
+}
+.product-2-phone-9{
+  background-image: url(./assets/gestor\ de\ ventas-\ registros\ mensuales\ abirto.jpg);
+}
+.product-3-phone-1{
+  background-image: url(./assets/Gestor\ de\ ventas\ avanzado-\ grafico\ diarios-ventas.jpg);
+}
+.product-3-phone-2{
+  background-image: url(./assets/Gestor\ de\ ventas\ avanzado-\ grafico\ diario-recaudacion.jpg);
+}
+.product-3-phone-3{
+  background-image: url(./assets/Gestor\ de\ ventas\ avanzado-\ grafico\ mensual-ventas.jpg);
+}
+.product-3-phone-4{
+  background-image: url(./assets/Gestor\ de\ ventas\ avanzado-\ grafico\ mensual-recaudacion.jpg);
+}
+.product-3-phone-5{
+  background-image: url(./assets/Gestor\ de\ ventas\ avanzado-\ graficar\ registros.jpg);
+}
+.product-3-phone-6{
+  background-image: url(./assets/Gestor\ de\ ventas\ avanzado-\ comparacion\ entre\ meses.jpg);
+}
+.product-3-phone-7{
+  background-image: url(./assets/Gestor\ de\ ventas\ avanzado-\ comparacion\ meses-opciones.jpg);
+}
+.product-3-phone-8{
+  background-image: url(./assets/Gestor\ de\ ventas\ avanzado-\ comparacion\ 1.jpg);
+}
+.product-3-phone-9{
+  background-image: url(./assets/Gestor\ de\ ventas\ avanzado-\ comparacion\ mes\ 3.jpg);
+}
+.product-3-phone-10{
+  background-image: url(./assets/Gestor\ de\ ventas\ avanzado-\ comparacion\ mes\ 4.jpg);
+}
+.product-3-phone-11{
+  background-image: url(./assets/Gestor\ de\ ventas\ avanzado-\ comparacion\ mes\ 5.jpg);
+}
 @keyframes rise-in {
   from {
     opacity: 0;
@@ -391,7 +669,7 @@ a:focus-visible {
 @media (max-width: 700px) {
   .navbar {
     width: min(100% - 1.25rem, 1120px);
-    align-items: flex-start;
+    align-items: center;
     flex-direction: column;
     gap: 0.45rem;
     padding: 0.85rem 0;
@@ -407,7 +685,8 @@ a:focus-visible {
   }
 
   .catalog-page,
-  .content-width {
+  .content-width,
+  .detail-page {
     width: min(100% - 1.25rem, 1000px);
   }
 
@@ -443,6 +722,25 @@ a:focus-visible {
   .product-meta {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .product-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .product-actions > a,
+  .product-actions > .request-button,
+  .product-actions > .secondary-button {
+    width: 100%;
+  }
+
+  .gallery-grid--phone {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .gallery-grid--computer {
+    grid-template-columns: 1fr;
   }
 }
 
