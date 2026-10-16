@@ -9,6 +9,7 @@
     />
     <title>Productos | OMP Tecnologías</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="time-ofert.js" defer></script>
   </head>
   <body>
     <header class="site-header">
@@ -23,6 +24,20 @@
       </nav>
     </header>
     <main class="catalog-page">
+      <section class="offer-campaign" id="offer-campaign" aria-labelledby="offer-message" hidden>
+        <p class="offer-copy" id="offer-message">Oferta imperdible el precio de los programas no aumenta hasta agosto de 2027</p>
+        <div class="offer-countdown" aria-live="off">
+          <p class="offer-countdown-label" id="offer-countdown-label">Consultando la hora oficial…</p>
+          <div class="countdown-units" aria-label="Tiempo restante de la oferta">
+            <span class="countdown-unit"><strong data-countdown-days>--</strong><span>días</span></span>
+            <span class="countdown-unit"><strong data-countdown-hours>--</strong><span>horas</span></span>
+            <span class="countdown-unit"><strong data-countdown-minutes>--</strong><span>minutos</span></span>
+            <span class="countdown-unit"><strong data-countdown-seconds>--</strong><span>segundos</span></span>
+          </div>
+        </div>
+        <a class="offer-payment-button" href="pay.html">Que voy a pagar</a>
+      </section>
+
       <header class="page-intro">
         <p class="eyebrow">OMP Tecnologías · Catálogo</p>
         <h1>Programas de gestión</h1>
@@ -51,8 +66,6 @@
         </p>
         <ol>
           <li>
-            <a href="#gestor-de-deudas" class="disponible">Gestor de Deudas</a>
-          </li>
           <li>
             <a href="#gestor-de-ventas-basico" class="disponible"
               >Registro de Ventas Básico</a
@@ -84,53 +97,6 @@
       </nav>
 
       <div class="product-list">
-        <article class="product-card" id="gestor-de-deudas">
-          <header class="product-header">
-            <h2 class="product-title">Gestor de Deudas</h2>
-            <ul class="product-meta">
-              <li><strong>SISTEMA:</strong> Android (Teléfono)</li>
-              <li><strong>ESTADO:</strong> disponible</li>
-              <li><strong>PRECIO MENSUAL:</strong> $15.000</li>
-              <li><strong>TIEMPO DE USO:</strong> 35 dias</li>
-            </ul>
-          </header>
-          <section class="product-section">
-            <h3>Descripción</h3>
-            <p>
-              Llevá un control claro de las cuentas fiadas, los saldos
-              pendientes y los cobros de cada cliente.
-            </p>
-          </section>
-          <section class="product-section">
-            <h3>Características principales</h3>
-            <ul class="feature-list">
-              <li>
-                Consultá cuántas personas tienen deudas activas y cuánto queda
-                por cobrar.
-              </li>
-              <li>
-                Guardá los datos y el barrio de cada cliente con fechas de deuda
-                y pago.
-              </li>
-              <li>
-                Corregí saldos y mantené actualizado el registro de cada cuenta.
-              </li>
-            </ul>
-          </section>
-          <footer class="product-actions">
-            <a
-              class="request-button"
-              href="https://wa.me/5493874767411?text=hola%20buenas%2C%20quiero%20solicitar%20Gestor%20de%20Deudas"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Solicitar programa</a
-            ><a class="secondary-button" href="producto-1.html#informacion"
-              >Más información</a
-            ><a class="secondary-button" href="producto-1.html#video"
-              >Ver video/imágenes</a
-            >
-          </footer>
-        </article>
         <article class="product-card" id="gestor-de-ventas-basico">
           <header class="product-header">
             <h2 class="product-title">Registro de Ventas Básico</h2>

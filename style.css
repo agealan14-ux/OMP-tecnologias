@@ -97,6 +97,219 @@ a {
   padding: clamp(2.5rem, 8vw, 5rem) 0 2rem;
 }
 
+/* Anuncio de precio: pieza editorial de alto contraste, sin gradientes ni sombras. */
+.offer-campaign {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.9fr);
+  grid-template-areas: "copy countdown" ". payment";
+  align-items: center;
+  gap: 1.25rem 2rem;
+  margin: 1.25rem 0 0.5rem;
+  padding: clamp(1.25rem, 4vw, 2rem);
+  border-left: 4px solid #aaa;
+  background: #242424;
+  color: #fff;
+}
+
+.offer-campaign[hidden] {
+  display: none;
+}
+
+.offer-copy {
+  grid-area: copy;
+  max-width: 18ch;
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.8rem, 4.8vw, 3.1rem);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+}
+
+.offer-countdown {
+  grid-area: countdown;
+  align-self: end;
+}
+
+.offer-countdown-label {
+  margin: 0 0 0.6rem;
+  color: #d0d0d0;
+  font-size: 0.9rem;
+}
+
+.countdown-units {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.5rem;
+}
+
+.countdown-unit {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding-top: 0.55rem;
+  border-top: 1px solid #676767;
+  color: #d0d0d0;
+  font-size: 0.75rem;
+}
+
+.countdown-unit strong {
+  color: #fff;
+  font-size: clamp(1.35rem, 3vw, 2rem);
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+.offer-payment-button {
+  grid-area: payment;
+  justify-self: end;
+  min-height: 2.9rem;
+  padding: 0.7rem 1.15rem;
+  background: #fff;
+  color: #202020;
+  font-weight: 750;
+  text-decoration: none;
+  transition: background-color 160ms ease, color 160ms ease;
+}
+
+.offer-payment-button:hover {
+  background: #d8d8d8;
+}
+
+.offer-campaign :focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 4px;
+}
+
+.pay-page {
+  width: min(100% - 2rem, 760px);
+  margin: 0 auto;
+  padding: clamp(3.5rem, 12vh, 7rem) 0;
+}
+
+.back-to-products-button {
+  position: fixed;
+  z-index: 5;
+  right: max(1rem, env(safe-area-inset-right));
+  bottom: max(1rem, env(safe-area-inset-bottom));
+  display: inline-flex;
+  min-height: 2.85rem;
+  align-items: center;
+  justify-content: center;
+  padding: 0.65rem 1rem;
+  border: 1px solid #242424;
+  background: #242424;
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background-color 160ms ease;
+}
+
+.back-to-products-button:hover {
+  background: #444;
+}
+
+.back-to-products-button:focus-visible {
+  outline: 3px solid #777;
+  outline-offset: 4px;
+}
+
+.pay-page h1 {
+  max-width: 18ch;
+  margin: 0;
+  font-size: clamp(2.2rem, 7vw, 4rem);
+  line-height: 1.05;
+  letter-spacing: -0.055em;
+}
+
+.pay-features-button {
+  display: inline-flex;
+  min-height: 2.85rem;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+  padding: 0.65rem 1rem;
+  background: #242424;
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background-color 160ms ease;
+}
+
+.pay-features-button:hover {
+  background: #444;
+}
+
+.pay-features-button:focus-visible {
+  outline: 3px solid #777;
+  outline-offset: 4px;
+}
+
+.pay-intro {
+  max-width: 66ch;
+  margin: 1.25rem 0 2rem;
+  color: var(--muted);
+  font-size: 1.08rem;
+}
+
+.pay-benefits {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.75rem 2rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pay-benefits li {
+  padding-top: 0.85rem;
+  border-top: 1px solid var(--border);
+}
+
+.pay-benefits h2 {
+  margin: 0 0 0.45rem;
+  font-size: 1.08rem;
+  line-height: 1.35;
+}
+
+.pay-benefits p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.program-features {
+  margin-top: 3.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  scroll-margin-top: 1.25rem;
+}
+
+.program-features > h2 {
+  max-width: 28ch;
+  margin: 0 0 1.5rem;
+  font-size: clamp(1.7rem, 5vw, 2.6rem);
+  line-height: 1.12;
+  letter-spacing: -0.04em;
+}
+
+.program-features-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem 2rem;
+}
+
+.program-features-list p {
+  margin: 0;
+  padding-top: 0.85rem;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+}
+
+.program-features-list strong {
+  color: var(--text);
+}
+
 .page-intro h1,
 .page-intro h2,
 .hero h1 {
@@ -575,24 +788,6 @@ a:focus-visible {
  background-repeat: no-repeat;
  background-position: center;
 }
-.phone-preview-1{
-  background-image: url(./assets/gestor\ de\ deudas-\ seccion\ principal.jpg);
-}
-.phone-preview-2{
-  background-image: url(./assets/gestor\ de\ deudas-panel\ de\ anotacion.jpg);
-}
-.phone-preview-3{
-  background-image: url(./assets/gestor\ de\ deudas-\ confirmacion\ de\ pago.jpg);
-}
-.phone-preview-4{
-  background-image: url(./assets/gestor\ de\ deudas-seccion\ de\ pagados.jpg);
-}
-.phone-preview-5{
-  background-image: url(./assets/gestro\ de\ deudas-buscador.jpg);
-}
-.phone-preview-6{
-  background-image: url(./assets/control\ de\ deudas\ reloj.jpg);
-}
 /* imagenes de gestor de ventas */
 .product-2-phone-1{
   background-image: url(./assets/gestor\ de\ ventas-\ seccion\ principal.jpg);
@@ -752,5 +947,28 @@ background-image: url(./assets/gestor\ de\ ventas-\ detalles\ de\ la\ edicion.jp
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+}
+
+@media (max-width: 700px) {
+  .offer-campaign {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "copy" "countdown" "payment";
+    gap: 1.25rem;
+  }
+
+  .offer-payment-button {
+    justify-self: stretch;
+    text-align: center;
+  }
+
+  .pay-benefits {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.25rem;
+  }
+
+  .program-features-list {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
   }
 }
